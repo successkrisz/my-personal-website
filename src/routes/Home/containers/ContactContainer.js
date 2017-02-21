@@ -29,8 +29,8 @@ ContactContainer.propTypes = {
   dispatch: PropTypes.func.isRequired
 };
 
-const mapStateToProps = () => ({
-  api_url: 'http://localhost:3004/api/contact'
+const mapStateToProps = state => ({
+  api_url: state.data.contact.api_url
 });
 
 export default connect(mapStateToProps)(ContactContainer);
