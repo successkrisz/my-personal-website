@@ -9,7 +9,7 @@ import './CoreLayout.scss';
 const CoreLayout = ({ children, data, fetchContent }) => {
   if (!data) {
     fetchContent();
-    return <div className="center-all"><i className="fa fa-spinner fa-spin" /></div>;
+    return <div className='center-all'><i className='fa fa-spinner fa-spin' /></div>;
   }
   return (
     <div>
@@ -23,7 +23,9 @@ const CoreLayout = ({ children, data, fetchContent }) => {
 };
 
 CoreLayout.propTypes = {
-  children: PropTypes.any
+  children: PropTypes.any,
+  data: PropTypes.any,
+  fetchContent: PropTypes.func.isRequired
 };
 
 export default CoreLayout;
