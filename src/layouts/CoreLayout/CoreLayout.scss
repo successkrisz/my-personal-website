@@ -1,0 +1,56 @@
+/* TEMP */
+body {
+  background-color: #f9f9f9;
+}
+
+.container {
+
+}
+.node {
+  color: #43853d;
+}
+.react {
+  color: #61dafb;
+}
+.react-dark {
+  color: rgb(9,73,108);
+}
+.redux {
+  color: rgb(46,14,128);
+}
+article:target, div:target {
+  padding-top: 40px;
+}
+a:hover {
+  color: #61dafb;
+  cursor: pointer;
+}
+a.navbar-brand {
+  color: #23527c;
+  &:hover {
+    color: #61dafb !important;
+  }
+}
+i.fa-quote-left {
+  margin-right: 0.4em;
+}
+i.fa-quote-right {
+  margin-left: 0.4em;
+}
+.secondary {
+  display: none;
+}
+li:hover .secondary {
+  display: inline;
+  color: #777;
+}
+form span:before {
+  display: inline-block;
+  font-family: FontAwesome;
+  content: '\F06A';
+  margin-right: 5px;
+}
+form span.error {
+  color: #a94442;
+  font-weight: normal;
+}
