@@ -4,6 +4,7 @@ import AboutContainer from '../containers/AboutContainer';
 import PortfolioContainer from '../containers/PortfolioContainer';
 import GitHubWidgetContainer from '../containers/GitHubWidgetContainer';
 import LinksContainer from '../containers/LinksContainer';
+import ContactContainer from '../containers/ContactContainer';
 
 const HomeView = () => (
   <div>
@@ -13,6 +14,7 @@ const HomeView = () => (
       <GitHubWidgetContainer />
       <LinksContainer />
     </Row>
+    <ContactContainer />
   </div>
 );
 
