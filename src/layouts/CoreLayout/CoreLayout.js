@@ -9,7 +9,7 @@ import './CoreLayout.scss';
 const CoreLayout = ({ children, data, fetchContent }) => {
   if (!data) {
     fetchContent();
-    return <div className='center-all'><i className='fa fa-spinner fa-spin' /></div>;
+    return <div className='spinner'><i className='fa fa-spinner fa-spin' /></div>;
   }
   return (
     <div>
