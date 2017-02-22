@@ -1,8 +1,9 @@
+import axios from 'axios';
 // ------------------------------------
 // Constants
 // ------------------------------------
 export const SAVE_HOMEPAGE_CONTENT = 'SAVE_HOMEPAGE_CONTENT';
-const API = 'http://localhost:3004/api';
+const API = 'http://krisztianballa.com/api';
 // ------------------------------------
 // Actions
 // ------------------------------------
@@ -13,10 +14,9 @@ export const saveContent = (content) => ({
 
 export const fetchContent = () => {
   return dispatch => {
-    fetch(API)
-      .then(response => response.json())
+    axios.get(API)
       .then(data => {
-        dispatch(saveContent(data));
+        dispatch(saveContent(data.data));
       });
   };
 };

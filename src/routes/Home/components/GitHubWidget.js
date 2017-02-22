@@ -1,5 +1,6 @@
 import React, { Component, PropTypes } from 'react';
 import { Col, Panel, Badge } from 'react-bootstrap';
+import axios from 'axios';
 
 class GitHubWidget extends Component {
   constructor () {
@@ -11,10 +12,9 @@ class GitHubWidget extends Component {
   }
   componentDidMount () {
     const apiUrl = `https://api.github.com/users/${this.props.username}/repos?sort=pushed`;
-    fetch(apiUrl)
-      .then(response => response.json())
+    axios.get(apiUrl)
       .then(json => {
-        const repos = json.map(repo => ({
+        const repos = json.data.map(repo => ({
           id: repo.id,
           url: repo.html_url,
           name: repo.name,
