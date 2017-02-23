@@ -35,7 +35,7 @@ class GitHubWidget extends Component {
             {(this.state.fetching) ? <i className='fa fa-spinner' />
             : this.state.repos.map(repo => (
               <li key={repo.id}>
-                <a href={repo.url} target='_blank'>{repo.name}</a> <span className='secondary'>{repo.pushedAt}</span>
+                <a href={repo.url} target='_blank'>{repo.name}</a>
                 <p>{repo.description}</p>
               </li>
             ))}
