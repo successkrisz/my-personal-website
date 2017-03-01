@@ -23,13 +23,13 @@ describe('(Component) Navigation', () => {
 
     it('Should render an About link', () => {
       expect(_wrapper.containsMatchingElement(
-        <NavItem href="#">About</NavItem>
+        <NavItem href='#'>About</NavItem>
       )).to.be.true;
     });
 
     it('Should render a Contact link', () => {
       expect(_wrapper.containsMatchingElement(
-        <NavItem href="#contact">Contact</NavItem>
+        <NavItem href='#contact'>Contact</NavItem>
       )).to.be.true;
     });
   });
