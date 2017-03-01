@@ -69,7 +69,7 @@ SubmitButton.propTypes = {
   children: PropTypes.any.isRequired
 };
 
-const ContactForm = ({ handleSubmit }) => (
+export const ContactForm = ({ handleSubmit }) => (
   <Row id='contact'>
     <Col xs={12}>
       <h1>Contact</h1>
