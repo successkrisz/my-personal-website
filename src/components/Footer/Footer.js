@@ -21,7 +21,7 @@ const Footer = ({ github, linkedin, quote }) => (
             <i className='fa fa-linkedin-square fa-3x' aria-hidden='true' /> LinkedIn
           </a>
           <br />
-          <a href=''>
+          <a href='Krisztian_Balla_CV.pdf' target='_blank'>
             <i className='fa fa-file-pdf-o fa-3x' aria-hidden='true' /> View my CV
           </a>
         </Col>

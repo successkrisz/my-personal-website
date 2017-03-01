@@ -23,7 +23,7 @@ const CoreLayout = ({ children, data, fetchContent }) => {
 };
 
 CoreLayout.propTypes = {
-  children: PropTypes.any,
+  children: PropTypes.element.isRequired,
   data: PropTypes.any,
   fetchContent: PropTypes.func.isRequired
 };

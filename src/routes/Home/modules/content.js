@@ -1,9 +1,8 @@
-import axios from 'axios';
+import { fetchHomePageContent } from 'lib/api';
 // ------------------------------------
 // Constants
 // ------------------------------------
 export const SAVE_HOMEPAGE_CONTENT = 'SAVE_HOMEPAGE_CONTENT';
-const API = 'http://krisztianballa.com/api';
 // ------------------------------------
 // Actions
 // ------------------------------------
@@ -14,7 +13,7 @@ export const saveContent = (content) => ({
 
 export const fetchContent = () => {
   return dispatch => {
-    axios.get(API)
+    fetchHomePageContent()
       .then(data => {
         dispatch(saveContent(data.data));
       });

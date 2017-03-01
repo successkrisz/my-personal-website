@@ -1,7 +1,7 @@
 import { connect } from 'react-redux';
 
 import CoreLayout from 'layouts/CoreLayout';
-import { fetchContent } from 'store/contentReducer';
+import { fetchContent } from 'routes/Home/modules/content';
 
 const mapStateToProps = (state) => ({
   data: (!!state.data)
