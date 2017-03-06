@@ -1,6 +1,7 @@
 import React, { PropTypes } from 'react';
 import { Row, Col } from 'react-bootstrap';
-import { Field, reduxForm } from 'redux-form';
+import { reduxForm } from 'redux-form';
+import { Input, SubmitButton } from 'components/Form';
 
 const rules = {
   name: /^[a-z,.' ]{2,30}$/i,
@@ -33,51 +34,15 @@ const validate = values => {
   return errors;
 };
 
-const renderInput = field => (
-  <div className={(field.meta.touched && field.meta.error) ? 'form-group has-error' : 'form-group'}>
-    <label htmlFor={field.name} className='col-sm-2 control-label'>{field.label}</label>
-    <div className='col-sm-10'>
-      <input {...field.input} type={field.type} className='form-control' placeholder={field.label} />
-      {field.meta.touched &&
-      field.meta.error &&
-      <span className='error'>{field.meta.error}</span>}
-    </div>
-  </div>
-);
-
-const renderTextarea = field => (
-  <div className={(field.meta.touched && field.meta.error) ? 'form-group has-error' : 'form-group'}>
-    <label htmlFor={field.name} className='col-sm-2 control-label'>{field.label}</label>
-    <div className='col-sm-10'>
-      <textarea {...field.input} className='form-control' placeholder={field.label} />
-      {field.meta.touched &&
-      field.meta.error &&
-      <span className='error'>{field.meta.error}</span>}
-    </div>
-  </div>
-);
-
-const SubmitButton = ({ children }) => (
-  <div className='form-group'>
-    <div className='col-sm-offset-2 col-sm-10'>
-      <button type='submit' className='btn btn-default'>{ children }</button>
-    </div>
-  </div>
-);
-
-SubmitButton.propTypes = {
-  children: PropTypes.any.isRequired
-};
-
 export const ContactForm = ({ handleSubmit }) => (
   <Row id='contact'>
     <Col xs={12}>
       <h1>Contact</h1>
       <form onSubmit={handleSubmit} className='form-horizontal'>
-        <Field name='name' component={renderInput} type='text' label='Name' />
-        <Field name='email' component={renderInput} type='email' label='Email' />
-        <Field name='phone' component={renderInput} type='text' label='Phone' />
-        <Field name='message' component={renderTextarea} label='Message' />
+        <Input name='name' type='text' label='Name' />
+        <Input name='email' type='email' label='Email' />
+        <Input name='phone' type='text' label='Phone' />
+        <Input name='message' type='textarea' label='Message' />
         <SubmitButton>Send message</SubmitButton>
       </form>
     </Col>

@@ -1,5 +1,6 @@
 import React, { PropTypes } from 'react';
 import { Row, Col, Panel } from 'react-bootstrap';
+
 import temporaryImage from '../assets/temp.png';
 
 export const PortfolioItem = ({ item }) => (
