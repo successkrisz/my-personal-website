@@ -17,14 +17,7 @@ export const loadContent = (repos) => ({
 
 export const loadGithub = () => (dispatch, getState) => {
   dispatch(setFetchingFlag(true));
-  fetchGitHubAPI().then(response => {
-    const repos = response.data.map(repo => ({
-      id: repo.id,
-      url: repo.html_url,
-      name: repo.name,
-      description: repo.description,
-      pushedAt: repo.pushed_at
-    }));
+  fetchGitHubAPI().then(repos => {
     dispatch(loadContent(repos));
     dispatch(setFetchingFlag(false));
   });

@@ -14,9 +14,9 @@ export const saveContent = (content) => ({
 export const fetchContent = () => {
   return dispatch => {
     fetchHomePageContent()
-      .then(data => {
-        dispatch(saveContent(data.data));
-      });
+    .then(data => {
+      dispatch(saveContent(data));
+    });
   };
 };
 
