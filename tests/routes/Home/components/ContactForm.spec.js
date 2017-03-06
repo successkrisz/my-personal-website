@@ -1,6 +1,6 @@
 import React from 'react';
 import { shallow } from 'enzyme';
-import { Field } from 'redux-form';
+import { Input } from 'components/Form';
 import { ContactForm } from 'routes/Home/components/ContactForm';
 
 describe('(Component) ContactForm', () => {
@@ -18,6 +18,6 @@ describe('(Component) ContactForm', () => {
 
   it('Should render form with 4 fields', () => {
     expect(_wrapper.find('form')).to.exist;
-    expect(_wrapper.find(Field)).to.have.length(4);
+    expect(_wrapper.find(Input)).to.have.length(4);
   });
 });
