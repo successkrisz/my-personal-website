@@ -5,29 +5,23 @@ import Navigation from 'components/Navigation';
 import FooterContainer from 'containers/FooterContainer';
 
 describe('(Layout) Core', () => {
-  let fetchContent, _wrapper;
+  let _wrapper;
 
-  describe('If data isn\'t supplied', () => {
-    beforeEach(() => {
-      fetchContent = sinon.spy();
-      _wrapper = shallow(<CoreLayout fetchContent={fetchContent}><h1>children</h1></CoreLayout>);
-    });
+  it('Should render a spinner if data isn\'t supplied', () => {
+    _wrapper = shallow(<CoreLayout><h1>children</h1></CoreLayout>);
 
-    it('Should call fetchContent() if data isn\'t supplied', () => {
-      expect(fetchContent).to.have.been.called;
-    });
+    expect(_wrapper.contains(
+      <i className='fa fa-spinner fa-spin' />
+    )).to.be.true;
 
-    it('Should render a spinner if data isn\'t supplied', () => {
-      expect(_wrapper.contains(
-        <i className='fa fa-spinner fa-spin' />
-      )).to.be.true;
-    });
+    expect(_wrapper.contains(
+      <h1>children</h1>
+    )).to.be.false;
   });
 
   describe('If data is present: ', () => {
     beforeEach(() => {
-      fetchContent = sinon.spy();
-      _wrapper = shallow(<CoreLayout data fetchContent={fetchContent}><h1>children</h1></CoreLayout>);
+      _wrapper = shallow(<CoreLayout data><h1>children</h1></CoreLayout>);
     });
 
     it('Should render Navigation, Children and Footer', () => {
@@ -36,8 +30,10 @@ describe('(Layout) Core', () => {
       expect(_wrapper.contains(<h1>children</h1>)).to.be.true;
     });
 
-    it('Shouldn\'t call fetchContent()', () => {
-      expect(fetchContent).have.not.been.called;
+    it('Shouldn\'t render spinner', () => {
+      expect(_wrapper.contains(
+        <i className='fa fa-spinner fa-spin' />
+      )).to.be.false;
     });
   });
 });

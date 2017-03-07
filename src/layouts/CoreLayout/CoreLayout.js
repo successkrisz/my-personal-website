@@ -6,11 +6,8 @@ import Navigation from 'components/Navigation';
 import 'styles/css/bootstrap.min.css';
 import './CoreLayout.scss';
 
-const CoreLayout = ({ children, data, fetchContent }) => {
-  if (!data) {
-    fetchContent();
-    return <div className='spinner'><i className='fa fa-spinner fa-spin' /></div>;
-  }
+const CoreLayout = ({ children, data }) => {
+  if (!data) return <div className='spinner'><i className='fa fa-spinner fa-spin' /></div>;
   return (
     <div>
       <Navigation />
@@ -24,8 +21,7 @@ const CoreLayout = ({ children, data, fetchContent }) => {
 
 CoreLayout.propTypes = {
   children: PropTypes.element.isRequired,
-  data: PropTypes.any,
-  fetchContent: PropTypes.func.isRequired
+  data: PropTypes.any
 };
 
 export default CoreLayout;
