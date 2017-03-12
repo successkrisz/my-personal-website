@@ -4,9 +4,11 @@ import { reducer as formReducer } from 'redux-form';
 import locationReducer from './location';
 import contentReducer from 'routes/Home/modules/content';
 import githubReducer from 'routes/Home/modules/github';
+import { reducer as authReducer } from 'routes/Login';
 
 export const makeRootReducer = (asyncReducers) => {
   return combineReducers({
+    auth: authReducer,
     github: githubReducer,
     content: contentReducer,
     location: locationReducer,
