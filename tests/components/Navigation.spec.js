@@ -1,6 +1,7 @@
 import React from 'react';
-import { Navbar, NavItem } from 'react-bootstrap';
+import { Nav, NavItem } from 'react-bootstrap';
 import { shallow } from 'enzyme';
+
 import Navigation from 'components/Navigation';
 
 describe('(Component) Navigation', () => {
@@ -10,17 +11,11 @@ describe('(Component) Navigation', () => {
     _wrapper = shallow(<Navigation />);
   });
 
-  it('Renders a Navbar', () => {
-    expect(_wrapper.is(Navbar)).to.be.true;
+  it('Renders a Nav component', () => {
+    expect(_wrapper.is(Nav)).to.be.true;
   });
 
   describe('Navigation Links...', () => {
-    it('Should render a Brand link to #', () => {
-      expect(_wrapper.contains(
-        <a href='#'>Krisztian Balla</a>
-      )).to.be.true;
-    });
-
     it('Should render an About link', () => {
       expect(_wrapper.containsMatchingElement(
         <NavItem href='#'>About</NavItem>
