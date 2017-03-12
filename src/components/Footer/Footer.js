@@ -1,5 +1,6 @@
 import React, { PropTypes } from 'react';
 import { Grid, Row, Col } from 'react-bootstrap';
+
 import './Footer.css';
 
 const Footer = ({ github, linkedin, quote }) => (
@@ -31,9 +32,9 @@ const Footer = ({ github, linkedin, quote }) => (
 );
 
 Footer.propTypes = {
-  github: PropTypes.string.isRequired,
+  github  : PropTypes.string.isRequired,
   linkedin: PropTypes.string.isRequired,
-  quote: PropTypes.object.isRequired
+  quote   : PropTypes.object.isRequired
 };
 
 export default Footer;

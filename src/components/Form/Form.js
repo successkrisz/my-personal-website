@@ -1,7 +1,7 @@
 import React, { PropTypes } from 'react';
 import { Field } from 'redux-form';
 
-const renderInput = field => (
+export const RenderInput = field => (
   <div className={(field.meta.touched && field.meta.error) ? 'form-group has-error' : 'form-group'}>
     <label htmlFor={field.name} className='col-sm-2 control-label'>{field.label}</label>
     <div className='col-sm-10'>
@@ -13,7 +13,7 @@ const renderInput = field => (
   </div>
 );
 
-const renderTextarea = field => (
+export const RenderTextarea = field => (
   <div className={(field.meta.touched && field.meta.error) ? 'form-group has-error' : 'form-group'}>
     <label htmlFor={field.name} className='col-sm-2 control-label'>{field.label}</label>
     <div className='col-sm-10'>
@@ -39,13 +39,13 @@ SubmitButton.propTypes = {
 
 export const Input = props => {
   if (props.type === 'textarea') {
-    return <Field {...props} component={renderTextarea} />;
+    return <Field {...props} component={RenderTextarea} />;
   }
-  return <Field {...props} component={renderInput} />;
+  return <Field {...props} component={RenderInput} />;
 };
 
 Input.propTypes = {
-  name: PropTypes.string.isRequired,
-  type: PropTypes.string.isRequired,
-  label: PropTypes.string
+  name  : PropTypes.string.isRequired,
+  type  : PropTypes.string.isRequired,
+  label : PropTypes.string
 };

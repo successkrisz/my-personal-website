@@ -3,6 +3,7 @@ import { Grid } from 'react-bootstrap';
 
 import FooterContainer from 'containers/FooterContainer';
 import Navigation from 'components/Navigation';
+import Header from 'components/Header';
 import 'styles/css/bootstrap.min.css';
 import './CoreLayout.scss';
 
@@ -10,7 +11,9 @@ const CoreLayout = ({ children, data }) => {
   if (!data) return <div className='spinner'><i className='fa fa-spinner fa-spin' /></div>;
   return (
     <div>
-      <Navigation />
+      <Header>
+        <Navigation />
+      </Header>
       <Grid id='content'>
         { children }
       </Grid>
@@ -21,7 +24,7 @@ const CoreLayout = ({ children, data }) => {
 
 CoreLayout.propTypes = {
   children: PropTypes.element.isRequired,
-  data: PropTypes.any
+  data    : PropTypes.bool.isRequired
 };
 
 export default CoreLayout;
