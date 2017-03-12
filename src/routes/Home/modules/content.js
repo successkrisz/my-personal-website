@@ -1,4 +1,4 @@
-import { fetchHomePageContent } from 'lib/api';
+import { fetchDB } from 'lib/api';
 // ------------------------------------
 // Constants
 // ------------------------------------
@@ -13,9 +13,12 @@ export const saveContent = (content) => ({
 
 export const fetchContent = () => {
   return dispatch => {
-    fetchHomePageContent()
+    Promise.all([
+      fetchDB('shared-content'),
+      fetchDB('pages/home')
+    ])
     .then(data => {
-      dispatch(saveContent(data));
+      dispatch(saveContent({ ...data[0], ...data[1] }));
     });
   };
 };
@@ -27,7 +30,22 @@ export const actions = {
 // ------------------------------------
 // Reducer
 // ------------------------------------
-export default function contentReducer (state = null, action) {
+export default function (state = null, action) {
   if (action.type === SAVE_HOMEPAGE_CONTENT) return action.payload;
   return state;
 }
+
+// ------------------------------------
+// Selectors
+// ------------------------------------
+export const getAboutContent = state => state.content.about;
+
+export const getLinksContent = state => state.content.links;
+
+export const getPortfolioContent = state => state.content.portfolio;
+
+export const getFooterContent = state => ({
+  quote: state.content['footer-quote'],
+  github: state.content.github,
+  linkedin: state.content.linkedin
+});

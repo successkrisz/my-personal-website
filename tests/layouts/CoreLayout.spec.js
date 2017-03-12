@@ -26,7 +26,7 @@ describe('(Layout) Core', () => {
       _wrapper = shallow(<CoreLayout data><h1>children</h1></CoreLayout>);
     });
 
-    it('Should render Navigation, Children and Footer', () => {
+    it('Should render Header, Navigation, Children and Footer', () => {
       expect(_wrapper.find(Header)).to.have.length(1);
       expect(_wrapper.contains(<Navigation />)).to.be.true;
       expect(_wrapper.contains(<FooterContainer />)).to.be.true;

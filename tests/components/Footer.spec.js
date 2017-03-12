@@ -31,7 +31,7 @@ describe('(Component) Footer', () => {
 
   it('Should render a link to github', () => {
     expect(_wrapper.contains(
-      <a href={props.github} target='_blank'>
+      <a href={`https://github.com/${props.github}`} target='_blank'>
         <i className='fa fa-github fa-3x' aria-hidden='true' /> GitHub
       </a>
     )).to.be.true;

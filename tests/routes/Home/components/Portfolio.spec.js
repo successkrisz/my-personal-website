@@ -6,12 +6,12 @@ import Portfolio, { PortfolioItem } from 'routes/Home/components/Portfolio';
 describe('(Component) Portfolio', () => {
   let _wrapper;
   const props = [
-    { url: 'url-1' },
-    { url: 'url-2' }
+    { title: 'url-1' },
+    { title: 'url-2' }
   ];
 
   beforeEach(() => {
-    _wrapper = shallow(<Portfolio sites={props} />);
+    _wrapper = shallow(<Portfolio portfolio={props} />);
   });
 
   it('Should render a "Portfolio" title', () => {
@@ -28,7 +28,7 @@ describe('(Component) Portfolio', () => {
   it('<PortfolioItem /> Should render title', () => {
     _wrapper = shallow(<PortfolioItem item={props[0]} />);
     const header = _wrapper.find(Panel).prop('header');
-    expect(header).to.equal(props[0].url);
+    expect(header).to.equal(props[0].title);
   });
 
   it('<PortfolioItem /> Should render image', () => {

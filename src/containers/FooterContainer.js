@@ -1,9 +1,6 @@
 import { connect } from 'react-redux';
 
 import Footer from 'components/Footer';
+import { getFooterContent } from 'routes/Home/modules/content';
 
-const mapStateToProps = (state) => ({
-  ...state.data.footer
-});
-
-export default connect(mapStateToProps)(Footer);
+export default connect(getFooterContent)(Footer);

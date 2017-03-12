@@ -15,9 +15,9 @@ export const loadContent = (repos) => ({
   payload: repos
 });
 
-export const loadGithub = () => (dispatch, getState) => {
+export const loadGithub = (username) => dispatch => {
   dispatch(setFetchingFlag(true));
-  fetchGitHubAPI().then(repos => {
+  fetchGitHubAPI(username).then(repos => {
     dispatch(loadContent(repos));
     dispatch(setFetchingFlag(false));
   });
@@ -31,7 +31,7 @@ const ACTION_HANDLERS = {
 
 // Reducer
 const initialState = { repos: null, isFetching: false };
-export default function githubReducer (state = initialState, action) {
+export default function (state = initialState, action) {
   const handler = ACTION_HANDLERS[action.type];
 
   return handler ? handler(state, action) : state;

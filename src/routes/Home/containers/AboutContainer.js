@@ -1,7 +1,6 @@
 import { connect } from 'react-redux';
 
 import About from '../components/About';
+import { getAboutContent } from '../modules/content';
 
-const mapStateToProps = state => ({ ...state.data.about.data });
-
-export default connect(mapStateToProps)(About);
+export default connect(getAboutContent)(About);

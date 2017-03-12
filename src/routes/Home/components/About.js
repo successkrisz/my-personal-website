@@ -15,8 +15,8 @@ const About = ({ banner_src, title, content }) => (
 
 About.propTypes = {
   banner_src: PropTypes.string.isRequired,
-  title: PropTypes.string.isRequired,
-  content: PropTypes.string.isRequired
+  title     : PropTypes.string.isRequired,
+  content   : PropTypes.string.isRequired
 };
 
 export default About;

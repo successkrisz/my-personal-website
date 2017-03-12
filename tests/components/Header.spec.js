@@ -9,7 +9,7 @@ describe('(Component) Header', () => {
   let _wrapper, children;
 
   before(() => {
-    children = 'menu';
+    children = <div />;
     _wrapper = shallow(<Header>{ children }</Header>);
   });
 

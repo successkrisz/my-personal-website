@@ -6,15 +6,13 @@ import ContactForm from '../components/ContactForm';
 import { sendMessage } from 'lib/api';
 
 // Action
-const handleSubmit = (values) => dispatch => {
-  const message = {
-    ...values,
+const handleSubmit = (formValues) => dispatch => {
+  sendMessage({
+    ...formValues,
+    read: false,
     date: moment().unix()
-  };
-  sendMessage(message)
-  .then(() => {
-    dispatch(reset('contact'));
-  });
+  })
+  .then(dispatch(reset('contact')));
 };
 
 const mapDispatchToProps = dispatch => ({

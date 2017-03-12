@@ -1,17 +1,8 @@
 import axios from 'axios';
-import { firebaseRef } from './firebase';
+import { firebaseRef, firebaseDB } from './firebase';
 
-const APIS = {
-  github: 'https://api.github.com/users/successkrisz/repos?sort=pushed'
-};
-
-export const fetchHomePageContent = async () => {
-  return firebaseRef.once('value')
-    .then(snapshot => snapshot.val());
-};
-
-export const fetchGitHubAPI = async () => {
-  return axios.get(APIS.github)
+export const fetchGitHubAPI = async (username) => {
+  return axios.get(`https://api.github.com/users/${username}/repos?sort=pushed`)
     .then(response => {
       return response.data.map(repo => ({
         id: repo.id,
@@ -24,5 +15,11 @@ export const fetchGitHubAPI = async () => {
 };
 
 export const sendMessage = async (message) => {
-  return firebaseRef.child('messages').push(message)
+  return firebaseRef.child('messages').push(message);
+};
+
+// Firebase promise wrapper
+export const fetchDB = async (route) => {
+  return firebaseDB.ref(route).once('value')
+    .then(snapshot => snapshot.val());
 };

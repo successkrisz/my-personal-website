@@ -14,7 +14,7 @@ const Footer = ({ github, linkedin, quote }) => (
           <div className='text-right italic'> - {quote.author}</div>
         </Col>
         <Col xs={12} sm={4}>
-          <a href={github} target='_blank'>
+          <a href={`https://github.com/${github}`} target='_blank'>
             <i className='fa fa-github fa-3x' aria-hidden='true' /> GitHub
           </a>
           <br />
