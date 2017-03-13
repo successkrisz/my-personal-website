@@ -1,5 +1,5 @@
-import React, { PropTypes } from 'react';
-import { Field } from 'redux-form';
+import React, { PropTypes } from 'react'
+import { Field } from 'redux-form'
 
 export const RenderInput = field => (
   <div className={(field.meta.touched && field.meta.error) ? 'form-group has-error' : 'form-group'}>
@@ -11,7 +11,7 @@ export const RenderInput = field => (
       <span className='error'>{field.meta.error}</span>}
     </div>
   </div>
-);
+)
 
 export const RenderTextarea = field => (
   <div className={(field.meta.touched && field.meta.error) ? 'form-group has-error' : 'form-group'}>
@@ -23,7 +23,7 @@ export const RenderTextarea = field => (
       <span className='error'>{field.meta.error}</span>}
     </div>
   </div>
-);
+)
 
 export const SubmitButton = ({ children }) => (
   <div className='form-group'>
@@ -31,21 +31,21 @@ export const SubmitButton = ({ children }) => (
       <button type='submit' className='btn btn-default'>{ children }</button>
     </div>
   </div>
-);
+)
 
 SubmitButton.propTypes = {
   children: React.PropTypes.any.isRequired
-};
+}
 
 export const Input = props => {
   if (props.type === 'textarea') {
-    return <Field {...props} component={RenderTextarea} />;
+    return <Field {...props} component={RenderTextarea} />
   }
-  return <Field {...props} component={RenderInput} />;
-};
+  return <Field {...props} component={RenderInput} />
+}
 
 Input.propTypes = {
   name  : PropTypes.string.isRequired,
   type  : PropTypes.string.isRequired,
   label : PropTypes.string
-};
+}

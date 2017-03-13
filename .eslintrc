@@ -19,7 +19,6 @@
     "__COVERAGE__" : false
   },
   "rules": {
-    "semi"                 : [1, "always"],
     "key-spacing"          : 0,
     "jsx-quotes"           : [2, "prefer-single"],
     "max-len"              : [2, 120, 2],

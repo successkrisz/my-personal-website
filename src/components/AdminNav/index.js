@@ -1,4 +1,4 @@
-import AdminNav from './AdminNav';
-export { AdminNav } from './AdminNav';
+import AdminNav from './AdminNav'
+export { AdminNav } from './AdminNav'
 
-export default AdminNav;
+export default AdminNav

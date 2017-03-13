@@ -1,11 +1,11 @@
-import React from 'react';
-import { Row } from 'react-bootstrap';
+import React from 'react'
+import { Row } from 'react-bootstrap'
 
-import AboutContainer from '../containers/AboutContainer';
-import PortfolioContainer from '../containers/PortfolioContainer';
-import GitHubWidgetContainer from '../containers/GitHubWidgetContainer';
-import LinksContainer from '../containers/LinksContainer';
-import ContactContainer from '../containers/ContactContainer';
+import AboutContainer from '../containers/AboutContainer'
+import PortfolioContainer from '../containers/PortfolioContainer'
+import GitHubWidgetContainer from '../containers/GitHubWidgetContainer'
+import LinksContainer from '../containers/LinksContainer'
+import ContactContainer from '../containers/ContactContainer'
 
 const HomeView = () => (
   <div>
@@ -17,6 +17,6 @@ const HomeView = () => (
     </Row>
     <ContactContainer />
   </div>
-);
+)
 
-export default HomeView;
+export default HomeView

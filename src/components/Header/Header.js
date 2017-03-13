@@ -1,10 +1,10 @@
-import React, { PropTypes } from 'react';
-import { Link } from 'react-router';
-import { Navbar } from 'react-bootstrap';
+import React, { PropTypes } from 'react'
+import { Link } from 'react-router'
+import { Navbar } from 'react-bootstrap'
 
 const Header = ({ children }) => (
   <Navbar inverse fixedTop collapseOnSelect onSelect={(key, event) => {
-    location.href = event.target.href;
+    location.href = event.target.href
   }}>
     <Navbar.Header>
       <Navbar.Brand>
@@ -16,10 +16,10 @@ const Header = ({ children }) => (
       { children }
     </Navbar.Collapse>
   </Navbar>
-);
+)
 
 Header.propTypes = {
   children: PropTypes.element.isRequired
-};
+}
 
-export default Header;
+export default Header

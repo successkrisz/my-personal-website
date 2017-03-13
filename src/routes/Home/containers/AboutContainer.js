@@ -1,6 +1,6 @@
-import { connect } from 'react-redux';
+import { connect } from 'react-redux'
 
-import About from '../components/About';
-import { getAboutContent } from '../modules/content';
+import About from '../components/About'
+import { getAboutContent } from '../modules/content'
 
-export default connect(getAboutContent)(About);
+export default connect(getAboutContent)(About)

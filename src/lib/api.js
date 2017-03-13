@@ -1,5 +1,5 @@
-import axios from 'axios';
-import { firebaseRef, firebaseDB } from './firebase';
+import axios from 'axios'
+import { firebaseRef, firebaseDB } from './firebase'
 
 export const fetchGitHubAPI = async (username) => {
   return axios.get(`https://api.github.com/users/${username}/repos?sort=pushed`)
@@ -10,16 +10,16 @@ export const fetchGitHubAPI = async (username) => {
         name: repo.name,
         description: repo.description,
         pushedAt: repo.pushed_at
-      }));
-    });
-};
+      }))
+    })
+}
 
 export const sendMessage = async (message) => {
-  return firebaseRef.child('messages').push(message);
-};
+  return firebaseRef.child('messages').push(message)
+}
 
 // Firebase promise wrapper
 export const fetchDB = async (route) => {
   return firebaseDB.ref(route).once('value')
-    .then(snapshot => snapshot.val());
-};
+    .then(snapshot => snapshot.val())
+}

@@ -1,8 +1,8 @@
-import React, { PropTypes } from 'react';
-import { Col, Panel } from 'react-bootstrap';
+import React, { PropTypes } from 'react'
+import { Col, Panel } from 'react-bootstrap'
 
 const Links = ({ links }) => {
-  const header = <h3>Recommended Links</h3>;
+  const header = <h3>Recommended Links</h3>
   return (
     <Col xs={12} sm={6}>
       <Panel header={header}>
@@ -13,11 +13,11 @@ const Links = ({ links }) => {
         </ul>
       </Panel>
     </Col>
-  );
-};
+  )
+}
 
 Links.propTypes = {
   links: PropTypes.array.isRequired
-};
+}
 
-export default Links;
+export default Links

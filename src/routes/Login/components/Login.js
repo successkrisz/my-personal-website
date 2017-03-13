@@ -1,7 +1,7 @@
-import React, { PropTypes } from 'react';
-import { Grid, Row, Col, Panel } from 'react-bootstrap';
-import { reduxForm } from 'redux-form';
-import { Input, SubmitButton } from 'components/Form';
+import React, { PropTypes } from 'react'
+import { Grid, Row, Col, Panel } from 'react-bootstrap'
+import { reduxForm } from 'redux-form'
+import { Input, SubmitButton } from 'components/Form'
 
 const Login = ({ handleSubmit }) => {
   return (
@@ -18,13 +18,13 @@ const Login = ({ handleSubmit }) => {
         </Col>
       </Row>
     </Grid>
-  );
-};
+  )
+}
 
 Login.propTypes = {
   handleSubmit: PropTypes.func.isRequired
-};
+}
 
 export default reduxForm({
   form: 'login'
-})(Login);
+})(Login)

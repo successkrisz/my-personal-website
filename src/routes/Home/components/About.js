@@ -1,7 +1,7 @@
-import React, { PropTypes } from 'react';
-import { Row, Col } from 'react-bootstrap';
+import React, { PropTypes } from 'react'
+import { Row, Col } from 'react-bootstrap'
 
-import banner from '../assets/krisz.png';
+import banner from '../assets/krisz.png'
 
 const About = ({ banner_src, title, content }) => (
   <Row id='about'>
@@ -11,12 +11,12 @@ const About = ({ banner_src, title, content }) => (
       <div dangerouslySetInnerHTML={{ __html: content }} />
     </Col>
   </Row>
-);
+)
 
 About.propTypes = {
   banner_src: PropTypes.string.isRequired,
   title     : PropTypes.string.isRequired,
   content   : PropTypes.string.isRequired
-};
+}
 
-export default About;
+export default About

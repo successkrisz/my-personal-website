@@ -1,9 +1,9 @@
-import React, { Component, PropTypes } from 'react';
-import { browserHistory, Router } from 'react-router';
-import { Provider } from 'react-redux';
+import React, { Component, PropTypes } from 'react'
+import { browserHistory, Router } from 'react-router'
+import { Provider } from 'react-redux'
 
-import { auth, storageKey } from 'lib/firebase';
-import { actions } from 'routes/Login';
+import { auth, storageKey } from 'lib/firebase'
+import { actions } from 'routes/Login'
 
 class AppContainer extends Component {
   static propTypes = {
@@ -14,22 +14,22 @@ class AppContainer extends Component {
   componentDidMount () {
     auth.onAuthStateChanged(user => {
       if (user) {
-        window.localStorage.setItem(storageKey, user.uid);
-        this.props.store.dispatch(actions.login(user));
+        window.localStorage.setItem(storageKey, user.uid)
+        this.props.store.dispatch(actions.login(user))
       } else {
-        window.localStorage.removeItem(storageKey);
-        this.props.store.dispatch(actions.logout(user));
-        browserHistory.push('/login');
+        window.localStorage.removeItem(storageKey)
+        this.props.store.dispatch(actions.logout(user))
+        browserHistory.push('/login')
       }
-    });
+    })
   }
 
   shouldComponentUpdate () {
-    return false;
+    return false
   }
 
   render () {
-    const { routes, store } = this.props;
+    const { routes, store } = this.props
 
     return (
       <Provider store={store}>
@@ -37,8 +37,8 @@ class AppContainer extends Component {
           <Router history={browserHistory} children={routes} />
         </div>
       </Provider>
-    );
+    )
   }
 }
 
-export default AppContainer;
+export default AppContainer
