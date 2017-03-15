@@ -30,7 +30,7 @@ export const startLogout = () => dispatch => {
   auth.signOut().then(() => {
     window.localStorage.removeItem(storageKey)
     dispatch(actions.logout())
-    browserHistory.push('login')
+    browserHistory.push('/login')
   })
 }
 
