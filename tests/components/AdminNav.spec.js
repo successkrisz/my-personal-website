@@ -23,7 +23,7 @@ describe('(Component) AdminNav', () => {
     })
 
     it('Should call logoutAction if clicked Logout', () => {
-      _wrapper.find(NavItem).simulate('click')
+      _wrapper.find({ href: '#' }).simulate('click')
 
       expect(startLogout.calledOnce).to.be.true
     })

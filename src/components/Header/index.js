@@ -1,3 +1,5 @@
-import Header from './Header'
+import connectedHeader from './Header'
 
-export default Header
+export { Header } from './Header'
+
+export default connectedHeader

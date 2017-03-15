@@ -4,6 +4,7 @@ import Home from './Home'
 import Admin from './Admin'
 import AdminLayout from 'layouts/AdminLayout'
 import Login, { redirectIfLoggedIn, requireAuth } from './Login'
+import Messages from './Messages'
 
 /*  Note: Instead of using JSX, we recommend using react-router
     PlainRoute objects to build route definitions.   */
@@ -24,7 +25,9 @@ export const createRoutes = (store) => ([
     onEnter     : requireAuth,
     component   : AdminLayout,
     indexRoute  : Admin(store),
-    childroutes : []
+    childRoutes : [
+      Messages(store)
+    ]
   }
 ])
 

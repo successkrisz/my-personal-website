@@ -3,7 +3,7 @@ import { Navbar } from 'react-bootstrap'
 import { Link } from 'react-router'
 import { shallow } from 'enzyme'
 
-import Header from 'components/Header'
+import { Header } from 'components/Header'
 
 describe('(Component) Header', () => {
   let _wrapper, children

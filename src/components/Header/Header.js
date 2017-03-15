@@ -1,11 +1,12 @@
 import React, { PropTypes } from 'react'
-import { Link } from 'react-router'
-import { Navbar } from 'react-bootstrap'
+import { Link, browserHistory } from 'react-router'
+import { Navbar, Nav, NavItem } from 'react-bootstrap'
+import { connect } from 'react-redux'
 
-const Header = ({ children }) => (
-  <Navbar inverse fixedTop collapseOnSelect onSelect={(key, event) => {
-    location.href = event.target.href
-  }}>
+import { isAuthenticated } from 'lib/firebase'
+
+export const Header = ({ children, isLoggedIn }) => (
+  <Navbar inverse fixedTop collapseOnSelect>
     <Navbar.Header>
       <Navbar.Brand>
         <Link to='/'>Krisztian Balla</Link>
@@ -13,13 +14,28 @@ const Header = ({ children }) => (
       <Navbar.Toggle />
     </Navbar.Header>
     <Navbar.Collapse>
+      { (isLoggedIn)
+        ? (
+          <Nav>
+            <NavItem onClick={() => browserHistory.push('/admin')}>
+              <i className='glyphicon glyphicon-cog' />
+            </NavItem>
+          </Nav>
+        )
+        : ''
+      }
       { children }
     </Navbar.Collapse>
   </Navbar>
 )
 
 Header.propTypes = {
-  children: PropTypes.element.isRequired
+  children: PropTypes.element.isRequired,
+  isLoggedIn: PropTypes.bool
 }
 
-export default Header
+const mapStateToProps = () => ({
+  isLoggedIn: isAuthenticated()
+})
+
+export default connect(mapStateToProps)(Header)
