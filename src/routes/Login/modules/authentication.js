@@ -1,4 +1,4 @@
-import { auth } from 'lib/firebase'
+import { auth, storageKey } from 'lib/firebase'
 import { browserHistory } from 'react-router'
 
 // ------------------------------------
@@ -27,7 +27,11 @@ export const logout = () => ({
   type: LOGOUT
 })
 export const startLogout = () => dispatch => {
-  auth.signOut()
+  auth.signOut().then(() => {
+    window.localStorage.removeItem(storageKey)
+    dispatch(actions.logout())
+    browserHistory.push('login')
+  })
 }
 
 export const actions = {

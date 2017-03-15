@@ -19,7 +19,6 @@ class AppContainer extends Component {
       } else {
         window.localStorage.removeItem(storageKey)
         this.props.store.dispatch(actions.logout(user))
-        browserHistory.push('/login')
       }
     })
   }
